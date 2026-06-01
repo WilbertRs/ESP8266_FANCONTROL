@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Thermal Management</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Menggunakan Chart.js lokal agar bisa diakses offline di HP -->
+    <script src="chart.min.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header & Status WebSockets -->
+        <header class="header">
+            <h1>SYSTEM OVERVIEW // THERMAL</h1>
+            <div class="status-indicator">
+                <span id="ws-status" class="dot disconnected"></span>
+                <span id="ws-text">DISCONNECTED</span>
+            </div>
+        </header>
+
+        <div class="grid-container">
+            <!-- Data Real-time -->
+            <div class="card value-card">
+                <h3>TEMPERATURE</h3>
+                <div class="value"><span id="temp-val">--</span><span class="unit">°C</span></div>
+            </div>
+            
+            <div class="card value-card">
+                <h3>HUMIDITY</h3>
+                <div class="value"><span id="hum-val">--</span><span class="unit">%</span></div>
+            </div>
+            
+            <div class="card value-card">
+                <h3>FAN SPEED</h3>
+                <div class="value"><span id="fan-val">--</span><span class="unit">%</span></div>
+                <div class="rpm">EST RPM: <span id="rpm-val">0</span></div>
+            </div>
+
+            <!-- Panel Kontrol (Mode & Slider) -->
+            <div class="card control-panel">
+                <h3>CONTROL PANEL</h3>
+                <div class="control-group">
+                    <label>MODE</label>
+                    <div class="toggle-container">
+                        <span class="toggle-label">AUTO</span>
+                        <label class="switch">
+                            <input type="checkbox" id="mode-toggle">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="toggle-label">MANUAL</span>
+                    </div>
+                </div>
+
+                <div class="control-group slider-group" id="pwm-group">
+                    <label>FAN PWM <span id="pwm-display">0</span></label>
+                    <input type="range" id="pwm-slider" min="0" max="255" value="0">
+                </div>
+            </div>
+
+            <!-- Grafik Live Updating Chart.js -->
+            <div class="card chart-card">
+                <h3>TEMPERATURE TREND</h3>
+                <div class="chart-container">
+                    <canvas id="tempChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card chart-card">
+                <h3>HUMIDITY TREND</h3>
+                <div class="chart-container">
+                    <canvas id="humChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
