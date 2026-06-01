@@ -45,7 +45,6 @@ h1 {
     text-transform: uppercase;
 }
 
-/* Status Indikator WebSocket */
 .status-indicator {
     display: flex;
     align-items: center;
@@ -71,7 +70,6 @@ h1 {
     box-shadow: 0 0 10px var(--danger);
 }
 
-/* Struktur Grid CSS */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -94,7 +92,6 @@ h1 {
     margin-bottom: 15px;
 }
 
-/* Porsi kolom untuk masing-masing kartu */
 .value-card {
     grid-column: span 3;
     display: flex;
@@ -131,7 +128,6 @@ h1 {
     margin-top: 5px;
 }
 
-/* Styling Switch Mode Auto/Manual */
 .control-group {
     margin-bottom: 20px;
 }
@@ -196,7 +192,6 @@ input:checked + .slider:before {
     font-size: 0.9rem;
 }
 
-/* Styling Slider PWM Input */
 .slider-group {
     opacity: 0.5;
     pointer-events: none;
@@ -239,7 +234,6 @@ input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
 }
 
-/* Desain Responsif untuk Mobile / Tablet */
 @media (max-width: 992px) {
     .value-card, .control-panel {
         grid-column: span 6;
