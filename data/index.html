@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Thermal Management</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Menggunakan Chart.js lokal agar bisa diakses offline di HP -->
     <script src="chart.min.js"></script>
 </head>
 <body>
     <div class="dashboard">
-        <!-- Header & Status WebSockets -->
         <header class="header">
             <h1>SYSTEM OVERVIEW // THERMAL</h1>
             <div class="status-indicator">
@@ -20,7 +18,6 @@
         </header>
 
         <div class="grid-container">
-            <!-- Data Real-time -->
             <div class="card value-card">
                 <h3>TEMPERATURE</h3>
                 <div class="value"><span id="temp-val">--</span><span class="unit">°C</span></div>
@@ -37,7 +34,6 @@
                 <div class="rpm">EST RPM: <span id="rpm-val">0</span></div>
             </div>
 
-            <!-- Panel Kontrol (Mode & Slider) -->
             <div class="card control-panel">
                 <h3>CONTROL PANEL</h3>
                 <div class="control-group">
@@ -58,7 +54,6 @@
                 </div>
             </div>
 
-            <!-- Grafik Live Updating Chart.js -->
             <div class="card chart-card">
                 <h3>TEMPERATURE TREND</h3>
                 <div class="chart-container">
